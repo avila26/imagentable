@@ -1,0 +1,7 @@
+{
+  "name": "tablaImagen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
