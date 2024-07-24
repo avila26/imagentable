@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServicioFService } from '../servicio-f.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  constructor(private servicio: ServicioFService) {}
+  imagen: any;
 
-  constructor() {}
-
+  obtenerImagen(dato: any) {
+    this.imagen=dato.target.files[0];
+  }
+  
+  storeImagen(nombre: any) {
+    this.servicio.saveImagen(nombre.value, this.imagen).subscribe({
+      next: (data: any) => {
+        debugger;
+        console.log(data);
+      },
+      error: (error: any) => {
+        debugger;
+        console.log(error);
+      },
+    });
+  }
 }
