@@ -13,6 +13,6 @@ export class ServicioFService {
     datos.append('nombre',nombre),
     datos.append('imagen',imagen)
 
-    return this.http.post('http://127.0.0.1:8000/api/persona', datos);
+    return this.http.post('http://3.22.68.213/api/persona', datos);
   }
 }
