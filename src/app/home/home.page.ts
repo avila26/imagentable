@@ -14,8 +14,8 @@ export class HomePage {
     this.imagen=dato.target.files[0];
   }
   
-  storeImagen(nombre: any) {
-    this.servicio.saveImagen(nombre.value, this.imagen).subscribe({
+  storeImagen(nombre: any,apellido:any,cedula:any,puesto:any, latitud:any,longitud:any) {
+    this.servicio.saveImagen(nombre.value,apellido.value,cedula.value, this.imagen, puesto.value, latitud.value,longitud.value).subscribe({
       next: (data: any) => {
         debugger;
         console.log(data);

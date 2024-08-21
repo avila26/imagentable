@@ -8,11 +8,16 @@ export class ServicioFService {
 
   constructor( private http:HttpClient) { }
 
-  saveImagen(nombre: string, imagen: any) {
+  saveImagen(nombre: string,apellido: string, cedula: string, foto: any, puesto:any, latitud:any, longitud:any) {
     let datos = new FormData();
     datos.append('nombre',nombre),
-    datos.append('imagen',imagen)
+    datos.append('apellido',apellido),
+    datos.append('cedula',cedula),
+    datos.append('foto',foto),
+    datos.append('puesto',puesto),
+    datos.append('latitud',latitud),
+    datos.append('longitud',longitud)
 
-    return this.http.post('http://3.22.68.213/api/persona', datos);
+    return this.http.post('http://127.0.0.1:8000/api/empleados/registrar', datos);
   }
 }
