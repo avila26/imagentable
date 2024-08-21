@@ -20,4 +20,13 @@ export class ServicioFService {
 
     return this.http.post('http://127.0.0.1:8000/api/empleados/registrar', datos);
   }
+
+  register(usuario: string, correo: string, password: string ){
+    let datos = {
+      usuario:usuario,
+      correo:correo,
+      password:password
+    }
+    return this.http.post('http://127.0.0.1:8000/api/usuarios/crear', datos)
+  }
 }
