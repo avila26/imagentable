@@ -13,18 +13,19 @@ export class RegistroUPage implements OnInit {
 
   ngOnInit() {
   }
-  
-  register(user: any, email: any, password: any) {
-    this.servicioFService.register(user.value, email.value, password.value).subscribe({
+
+  storeUsuario(usuario: any,correo:any, password:any) {
+    this.servicioFService.register(usuario.value, correo.value, password.value).subscribe({
       next: (data: any) => {
-        console.log('Registro exitoso:', data);
-        // Aquí puedes manejar la respuesta exitosa, como redirigir a otra página o mostrar un mensaje.
+        debugger;
+        console.log(data);
       },
       error: (error: any) => {
-        console.error('Error en el registro:', error);
-        // Aquí puedes manejar errores, como mostrar un mensaje al usuario.
-      }
-    });
-  }
+        debugger;
+        console.log(error);
+      },
+});
+}
+
 
 }
